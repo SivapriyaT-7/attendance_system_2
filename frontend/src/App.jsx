@@ -8,7 +8,7 @@ function App() {
     getStudents();
   }, []);
 
-  const AP_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
   const getStudents = async () => {
     try {
@@ -80,7 +80,8 @@ function App() {
 
   const resetAttendance = async () => {
     try {
-      const response = await fetch(`${API_URL}/attendance/today`,
+      const response = await fetch(
+        `${API_URL}/attendance/today`,
         {
           method: "DELETE",
         }
